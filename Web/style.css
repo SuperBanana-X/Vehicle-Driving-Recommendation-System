@@ -1,0 +1,297 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #0d0d2f; 
+    color: #e0e0e0; 
+    margin: 0;
+    padding: 0; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    opacity: 0; 
+    animation: fadeInPage 0.5s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+    to {
+        opacity: 1;
+    }
+}
+
+#startScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #0d0d2f; 
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInStartScreen 0.6s ease-out 0.3s forwards; 
+    background-image: linear-gradient(rgba(0, 200, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 2px;
+}
+
+@keyframes slideInStartScreen {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#startScreenTitle {
+    font-family: 'Consolas', 'Menlo', 'Monaco', monospace, sans-serif;
+    font-size: 2.8em; 
+    color: #00ffff; 
+    text-shadow: 0 0 5px #00c8c8, 0 0 10px #00c8c8, 0 0 15px #00c8c8, 0 0 20px #007777;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUpStart 0.7s ease-out 0.8s forwards; 
+}
+
+#startScreenSubtitle {
+    font-family: 'Consolas', 'Menlo', 'Monaco', monospace, sans-serif;
+    font-size: 1.2em;
+    color: #99f0f0; 
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUpStart 0.7s ease-out 1.0s forwards; 
+}
+
+#enterAppButton {
+    font-family: 'Consolas', 'Menlo', 'Monaco', monospace, sans-serif;
+    background: transparent;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    padding: 12px 25px;
+    font-size: 1.3em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 0 0 3px #00c8c8;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUpStart 0.7s ease-out 1.2s forwards; 
+}
+
+#enterAppButton:hover {
+    background-color: #00ffff;
+    color: #0d0d2f; 
+    box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
+}
+
+@keyframes fadeInSlideUpStart { 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); 
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+
+body.app-view { 
+    background-color: #eef1f5; 
+    padding: 20px; 
+}
+
+.container.active-animations {
+    animation: slideInContainer 0.6s ease-out 0.1s forwards; 
+}
+.container.active-animations h1 { 
+    animation: fadeInSlideUp 0.5s ease-out 0.4s forwards; 
+}
+.container.active-animations .controls {
+    animation: fadeInSlideUp 0.5s ease-out 0.6s forwards;
+}
+.container.active-animations .video-container {
+    animation: fadeInSlideUp 0.5s ease-out 0.8s forwards;
+}
+.container.active-animations #detectionInfo {
+    animation: fadeInSlideUp 0.5s ease-out 1.0s forwards;
+}
+
+.container h1, 
+.container .controls,
+.container .video-container,
+.container #detectionInfo {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes slideInContainer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container h1 {
+    color: #1a2533; 
+    margin-bottom: 25px; 
+    font-weight: 600; 
+    font-size: 1.8em; 
+}
+
+.controls {
+    margin-bottom: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
+.upload-button {
+    background-color: #007bff; 
+    color: white;
+    padding: 12px 20px; 
+    border-radius: 6px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.upload-button:hover {
+    background-color: #0056b3; 
+}
+
+input[type="file"] {
+    display: none; 
+}
+
+button { 
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 12px 25px; 
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e7e34; 
+}
+
+button:disabled {
+    background-color: #adb5bd; 
+    color: #6c757d; 
+    cursor: not-allowed;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 720px; 
+    margin: 0 auto 30px auto; 
+    background-color: #222; 
+    border: 1px solid #333; 
+    border-radius: 8px;
+    overflow: hidden; 
+    padding-top: 56.25%; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#videoPlayer {
+    display: none; 
+}
+
+#outputCanvas {
+    display: block;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; 
+}
+
+#detectionInfo {
+    margin-top: 30px; 
+    padding: 25px; 
+    background-color: #ffffff; 
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid #e9ecef; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+}
+
+#detectionInfo h2 {
+    margin-top: 0;
+    margin-bottom: 15px; 
+    color: #343a40; 
+    font-size: 1.25em;
+    font-weight: 600;
+    border-bottom: 1px solid #dee2e6; 
+    padding-bottom: 10px; 
+}
+
+#statusMessage {
+    margin-bottom: 20px; 
+    color: #5a6268; 
+    font-style: italic;
+    font-size: 0.95em;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
+    gap: 15px; 
+}
+
+.stat-item {
+    background-color: #f8f9fa; 
+    padding: 15px; 
+    border-radius: 6px;
+    border: 1px solid #e9ecef; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #495057; 
+    margin-bottom: 8px; 
+}
+
+.stat-value {
+    font-size: 1.75em; 
+    font-weight: bold;
+    color: #2c3e50; 
+}
+
+@keyframes fadeInSlideUp { 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
