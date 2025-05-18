@@ -1,0 +1,11 @@
+path: /Users/stevenchen/Desktop/Autopilot/DriveSeg/dataset
+train: train/images
+val: test/images
+nc: 6
+names:
+- vehicle
+- pedestrian
+- bicycle
+- motorcycle
+- traffic light
+- traffic sign
